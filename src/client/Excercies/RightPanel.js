@@ -11,7 +11,8 @@ class Right extends Component {
       exercises: {
         id,
         title = 'Welcome',
-        description = 'Please Select the text from the right to enable the sexies',
+        description = 'Please Select the'
+        + 'text from the right to enable the sexies',
       },
     } = this.props;
     return (

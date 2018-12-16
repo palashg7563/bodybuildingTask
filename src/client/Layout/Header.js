@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
+import Create from '../Excercies/Dialogs/Create';
 import style from './Header.style';
 
 class Header extends Component {
@@ -28,6 +29,7 @@ class Header extends Component {
           <Typography variant="h6" color="inherit" className={classes.grow}>
             Fitness App
           </Typography>
+          <Create />
         </Toolbar>
       </AppBar>
     );
