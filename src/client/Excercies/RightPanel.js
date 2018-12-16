@@ -6,19 +6,26 @@ class Right extends Component {
   state = {}
 
   render() {
-    const { styles } = this.props;
+    const {
+      styles,
+      exercises: {
+        id,
+        title = 'Welcome',
+        description = 'Please Select the text from the right to enable the sexies',
+      },
+    } = this.props;
     return (
       <Paper style={styles.Paper}>
         <Typography
           variant="headline"
         >
-         Welcome
+          {title}
         </Typography>
         <Typography
           variant="subheading"
           style={{ marginTop: 20 }}
         >
-          Please Select the text from the right to enable the sexies
+          {description}
         </Typography>
       </Paper>
     );

@@ -8,6 +8,7 @@ class App extends Component {
   state = {
     exercises,
     category: 'arms',
+    exercise: {},
   };
 
   getCategoryByMuscles() {
@@ -32,16 +33,24 @@ class App extends Component {
     });
   }
 
+  handleExercise=(id) => {
+    this.setState(({ exercises }) => ({
+      exercise: exercises.find((ex) => ex.id === id),
+    }));
+  }
+
   render() {
-    const exercise = this.getCategoryByMuscles();
-    const { category } = this.state;
+    const exercises = this.getCategoryByMuscles();
+    const { category, exercise } = this.state;
 
     return (
       <Fragment>
         <Header />
         <Excercise
-          excercise={exercise}
+          exercises={exercise}
+          excercise={exercises}
           category={category}
+          onSelect={this.handleExercise}
         />
         <Footer
           category={category}

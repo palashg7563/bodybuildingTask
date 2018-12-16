@@ -21,7 +21,9 @@ class Excercies extends Component {
   }
 
   render() {
-    const { excercise, category } = this.props;
+    const {
+      excercise, category, onSelect, exercises,
+    } = this.props;
 
     return (
       <Grid container>
@@ -30,10 +32,14 @@ class Excercies extends Component {
             category={category}
             excercise={excercise}
             styles={style}
+            onSelect={onSelect}
           />
         </Grid>
         <Grid item sm>
-          <RightPanel styles={style} />
+          <RightPanel
+            styles={style}
+            exercises={exercises}
+          />
         </Grid>
       </Grid>
     );

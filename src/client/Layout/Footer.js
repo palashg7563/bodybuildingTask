@@ -34,7 +34,7 @@ class Footer extends Component {
         >
           <Tab label="All" />
           {muscles.map((categorys) => (
-            <Tab label={categorys} />
+            <Tab key={categorys} label={categorys} />
           ))}
         </Tabs>
       </Paper>

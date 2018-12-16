@@ -13,13 +13,18 @@ class Left extends Component {
   state = {}
 
   render() {
-    const { styles, excercise, category } = this.props;
+    const {
+      styles,
+      excercise,
+      category,
+      onSelect,
+    } = this.props;
 
     return (
       <Paper style={styles.Paper}>
         {excercise.map(([group, categorys]) => (!category || category === group
           ? (
-            <Fragment>
+            <Fragment key={group}>
               <Typography
                 variant="headline"
                 style={{ textTransform: 'capitalize' }}
@@ -27,9 +32,15 @@ class Left extends Component {
                 {group}
               </Typography>
               <List component="ul">
-                {categorys.map(({ title }) => (
-                  <ListItem button>
-                    <ListItemText primary={title} />
+                {categorys.map(({ id, title }) => (
+                  <ListItem
+                    key={id}
+                    button
+                    onClick={() => onSelect(id)}
+                  >
+                    <ListItemText
+                      primary={title}
+                    />
                   </ListItem>
                 ))}
               </List>
