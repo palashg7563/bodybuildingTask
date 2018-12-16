@@ -12,7 +12,7 @@ module.exports = {
         "react"
     ],
     "rules" : {
-        strict: 'warn',
+        'strict': 'warn',
         'no-console': 'off',
         'max-len': [
             'error',
@@ -20,11 +20,9 @@ module.exports = {
                 code: 80,
                 tabWidth: 2,
                 comments: 80,
-                // ignorePattern: '',
                 ignoreComments: true,
                 ignoreTrailingComments: true,
                 ignoreUrls: true,
-                // ignoreStrings: false,
                 ignoreTemplateLiterals: true,
                 ignoreRegExpLiterals: true,
             },
@@ -36,7 +34,7 @@ module.exports = {
         'object-curly-spacing': 'error',
         'space-before-function-paren': 'error',
         'comma-dangle': 'error',
-        semi: 'error',
+        'semi': 'error',
         'no-extra-semi': 'error',
         'consistent-return': 'error',
         'no-shadow': 'error',
@@ -45,7 +43,7 @@ module.exports = {
         'no-unneeded-ternary': 'error',
         'consistent-return': 'error',
         'class-methods-use-this': 'error',
-        indent: 'error',
+        'indent': 'error',
         'array-callback-return': 'error',
         'no-underscore-dangle': 'error',
         'no-multiple-empty-lines': 'error',
@@ -70,20 +68,18 @@ module.exports = {
 
         'jsx-a11y/no-autofocus': 'error',
 
-        // change this to error later
         'react/forbid-prop-types': 'off',
-        // change this to error later
-        'react/no-array-index-key': 'off',
-        'react/jsx-filename-extension': 'off',
-        // change this to error later
         'react/require-default-props': 'off',
         'react/no-unused-prop-types': 'error',
+        'react/prop-types': 'error',
+        'react/jsx-indent-props': 'error',
+        'react/prop-types':'off',
+        'react/no-array-index-key': 'off',
+        'react/jsx-filename-extension': 'off',
         'react/prefer-stateless-function': 'error',
         'react/jsx-no-bind': 'error',
-        'react/prop-types': 'error',
         'react/sort-comp': 'error',
         'react/jsx-closing-bracket-location': 'error',
-        'react/jsx-indent-props': 'error',
         'react/no-unescaped-entities': 'error',
         'react/jsx-no-comment-textnodes': 'error',
         'react/no-did-mount-set-state': 'error'
