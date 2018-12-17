@@ -21,7 +21,7 @@ class Excercies extends Component {
 
   render() {
     const {
-      excercise, category, onSelect, exercises,
+      excercise, category, onSelect, exercises, onDelete,
     } = this.props;
 
     return (
@@ -32,6 +32,7 @@ class Excercies extends Component {
             excercise={excercise}
             styles={style}
             onSelect={onSelect}
+            onDelete={onDelete}
           />
         </Grid>
         <Grid item sm>

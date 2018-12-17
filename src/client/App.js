@@ -12,17 +12,18 @@ class App extends Component {
   };
 
   getCategoryByMuscles() {
+    const initalState = muscles.reduce((excercise, category) => ({
+      ...excercise,
+      [category]: [],
+    }), {});
     /* eslint-disable */
     return Object.entries(
         this.state.exercises.reduce((excercises, excercise) => {
         const { muscles } = excercise;
 
-        excercises[muscles] = excercises[muscles]
-          ? [...excercises[muscles], excercise]
-          : [excercise]
-
+        excercises[muscles] = [...excercises[muscles], excercise]
         return excercises;
-      }, {})
+        }, initalState)
     )
     /* eslint-enable */
   }
@@ -48,6 +49,12 @@ class App extends Component {
     }));
   }
 
+  handleExcerciseDelete=(id) => {
+    this.setState(({ exercises }) => ({
+      exercises: exercises.filter((docs) => docs.id !== id),
+    }));
+  }
+
   render() {
     const exercises = this.getCategoryByMuscles();
     const { category, exercise } = this.state;
@@ -63,6 +70,7 @@ class App extends Component {
           excercise={exercises}
           category={category}
           onSelect={this.handleExercise}
+          onDelete={this.handleExcerciseDelete}
         />
         <Footer
           category={category}

@@ -46,7 +46,7 @@ class Create extends Component {
     const { onCreate } = this.props;
     onCreate({
       ...excercise,
-      id: excercise.title.toUpperCase().replace(/ /g, '-'),
+      id: excercise.title.toLowerCase().replace(/ /g, '-'),
     });
 
     this.setState({

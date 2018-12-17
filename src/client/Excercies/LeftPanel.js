@@ -4,6 +4,9 @@ import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 class Left extends Component {
   state = {}
@@ -14,7 +17,9 @@ class Left extends Component {
       excercise,
       category,
       onSelect,
+      onDelete,
     } = this.props;
+
 
     return (
       <Paper style={styles.Paper}>
@@ -37,6 +42,13 @@ class Left extends Component {
                     <ListItemText
                       primary={title}
                     />
+                    <ListItemSecondaryAction>
+                      <IconButton
+                        onClick={() => onDelete(id)}
+                      >
+                        <DeleteIcon />
+                      </IconButton>
+                    </ListItemSecondaryAction>
                   </ListItem>
                 ))}
               </List>
