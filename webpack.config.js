@@ -2,7 +2,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: './src/client/index.js',
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {
@@ -13,12 +13,15 @@ module.exports = {
     ],
   },
   resolve: {
+    alias: {
+      '@material-ui/core': '@material-ui/core/es',
+    },
     extensions: ['*', '.js', '.jsx'],
   },
   output: {
     path: `${__dirname}/dist`,
     publicPath: '/',
-    filename: 'bundle.js',
+    filename: '[name].[hash].js',
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -27,6 +30,7 @@ module.exports = {
       minChunkSize: 1000,
     }),
   ],
+  devtool: 'cheap-module-source-map',
   devServer: {
     contentBase: './dist',
     hot: true,
