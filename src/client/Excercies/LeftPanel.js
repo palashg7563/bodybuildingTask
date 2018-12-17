@@ -5,10 +5,6 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-function ListItemLink(props) {
-  return <ListItem button component="a" {...props} />;
-}
-
 class Left extends Component {
   state = {}
 

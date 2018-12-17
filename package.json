@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config ./webpack.config.js"
+    "dev": "rm -rf ./dist/*.js && yarn build && webpack-dev-server --config ./webpack.config.js",
+    "build":"webpack"
   },
   "author": {
     "name": "Palash Gupta",
@@ -18,18 +19,20 @@
     "react": "16.6.3",
     "react-dom": "16.6.3",
     "react-hot-loader": "4.6.0",
+    "react-loadable": "^5.5.0",
     "webpack": "4.27.1",
     "webpack-cli": "3.1.2",
     "webpack-dev-server": "3.1.10"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
+    "@babel/plugin-proposal-class-properties": "7.2.1",
     "@babel/preset-env": "7.2.0",
     "@babel/preset-react": "7.0.0",
-    "@babel/plugin-proposal-class-properties": "7.2.1",
-    "babel-loader": "8.0.4",
-    "eslint": "5.10.0",
     "babel-eslint": "10.0.1",
+    "babel-loader": "8.0.4",
+    "babel-minify": "^0.5.0",
+    "eslint": "5.10.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",

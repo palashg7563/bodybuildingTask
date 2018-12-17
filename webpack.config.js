@@ -22,9 +22,34 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 5,
+      minChunkSize: 1000,
+    }),
   ],
   devServer: {
     contentBase: './dist',
     hot: true,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      minSize: 1000,
+      maxSize: 0,
+      minChunks: 10,
+      automaticNameDelimiter: '~',
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
   },
 };
