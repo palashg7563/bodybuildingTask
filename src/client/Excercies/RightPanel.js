@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
@@ -14,20 +14,28 @@ class Right extends Component {
         description = 'Please Select the'
         + 'text from the right to enable the sexies',
       },
+      editMode,
     } = this.props;
     return (
       <Paper style={styles.Paper}>
-        <Typography
-          variant="headline"
-        >
-          {title}
-        </Typography>
-        <Typography
-          variant="subheading"
-          style={{ marginTop: 20 }}
-        >
-          {description}
-        </Typography>
+        {editMode
+          ? <Form />
+          : (
+            <Fragment>
+              <Typography
+                variant="headline"
+              >
+                {title}
+              </Typography>
+              <Typography
+                variant="subheading"
+                style={{ marginTop: 20 }}
+              >
+                {description}
+              </Typography>
+            </Fragment>
+          )
+      }
       </Paper>
     );
   }

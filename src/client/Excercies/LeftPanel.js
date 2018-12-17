@@ -7,6 +7,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+
 
 class Left extends Component {
   state = {}
@@ -18,6 +20,7 @@ class Left extends Component {
       category,
       onSelect,
       onDelete,
+      onEdit,
     } = this.props;
 
 
@@ -47,6 +50,11 @@ class Left extends Component {
                         onClick={() => onDelete(id)}
                       >
                         <DeleteIcon />
+                      </IconButton>
+                      <IconButton
+                        onClick={() => onEdit(id)}
+                      >
+                        <EditIcon />
                       </IconButton>
                     </ListItemSecondaryAction>
                   </ListItem>

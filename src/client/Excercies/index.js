@@ -21,7 +21,13 @@ class Excercies extends Component {
 
   render() {
     const {
-      excercise, category, onSelect, exercises, onDelete,
+      excercise,
+      category,
+      onSelect,
+      exercises,
+      onDelete,
+      onEdit,
+      editMode,
     } = this.props;
 
     return (
@@ -29,6 +35,7 @@ class Excercies extends Component {
         <Grid item sm>
           <LeftPanel
             category={category}
+            onEdit={onEdit}
             excercise={excercise}
             styles={style}
             onSelect={onSelect}
@@ -38,6 +45,7 @@ class Excercies extends Component {
         <Grid item sm>
           <RightPanel
             styles={style}
+            editMode={editMode}
             exercises={exercises}
           />
         </Grid>

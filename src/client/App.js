@@ -28,36 +28,37 @@ class App extends Component {
     /* eslint-enable */
   }
 
-  handleCategory = (category) => {
-    this.setState({
-      category,
-    });
-  }
+  handleCategory = (category) => this.setState({
+    category,
+  });
 
-  handleExercise=(id) => {
-    this.setState(({ exercises }) => ({
-      exercise: exercises.find((ex) => ex.id === id),
-    }));
-  }
 
-  handleExcerciseCreate=(excercise) => {
-    this.setState(({ exercises }) => ({
-      exercises: [
-        ...exercises,
-        excercise,
-      ],
-    }));
-  }
+  handleExercise=(id) => this.setState(({ exercises }) => ({
+    exercise: exercises.find((ex) => ex.id === id),
+  }));
 
-  handleExcerciseDelete=(id) => {
-    this.setState(({ exercises }) => ({
-      exercises: exercises.filter((docs) => docs.id !== id),
-    }));
-  }
+
+  handleExcerciseCreate=(excercise) => this.setState(({ exercises }) => ({
+    exercises: [
+      ...exercises,
+      excercise,
+    ],
+  }));
+
+
+  handleExcerciseDelete=(id) => this.setState(({ exercises }) => ({
+    exercises: exercises.filter((docs) => docs.id !== id),
+  }));
+
+
+  handleEdit=(id) => this.setState(({ exercises }) => ({
+    editMode: true,
+  }));
+
 
   render() {
     const exercises = this.getCategoryByMuscles();
-    const { category, exercise } = this.state;
+    const { category, exercise, editMode } = this.state;
 
     return (
       <Fragment>
@@ -71,6 +72,8 @@ class App extends Component {
           category={category}
           onSelect={this.handleExercise}
           onDelete={this.handleExcerciseDelete}
+          onEdit={this.handleEdit}
+          editMode={editMode}
         />
         <Footer
           category={category}
