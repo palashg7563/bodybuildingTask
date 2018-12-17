@@ -15,7 +15,7 @@ class Header extends Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, muscles, ExcericeCreate } = this.props;
     return (
       <AppBar position="static">
         <Toolbar>
@@ -29,7 +29,10 @@ class Header extends Component {
           <Typography variant="h6" color="inherit" className={classes.grow}>
             Fitness App
           </Typography>
-          <Create />
+          <Create
+            onCreate={ExcericeCreate}
+            muscles={muscles}
+          />
         </Toolbar>
       </AppBar>
     );
