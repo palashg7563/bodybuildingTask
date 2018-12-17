@@ -51,11 +51,6 @@ class Left extends Component {
                       >
                         <DeleteIcon />
                       </IconButton>
-                      <IconButton
-                        onClick={() => onEdit(id)}
-                      >
-                        <EditIcon />
-                      </IconButton>
                     </ListItemSecondaryAction>
                   </ListItem>
                 ))}
